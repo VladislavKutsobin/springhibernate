@@ -50,6 +50,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean addUserToMarathon(User user, Marathon marathon) {
-        return marathon.getUsers().add(user);
+        boolean check = marathon.getUsers().add(user);
+        if (check) {
+            userRepository.saveAndFlush(user);
+            return true;
+        } else return false;
+
     }
 }
