@@ -55,5 +55,8 @@ public class User {
     @JoinTable(name = "marathon_user",
         joinColumns = @JoinColumn(name = "user_id"),
         inverseJoinColumns = @JoinColumn(name = "marathon_id"))
-    private Set<Marathon> marathons = new HashSet<>();
+    private Set<Marathon> marathons;
+
+    @OneToOne(optional = false, fetch = FetchType.LAZY, mappedBy = "user")
+    private Progress progress;
 }
