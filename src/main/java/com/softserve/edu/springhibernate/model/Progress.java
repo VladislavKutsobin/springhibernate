@@ -46,5 +46,9 @@ public class Progress {
     @JoinColumn(name = "task_id")
     private Task task;
 
+    public enum TaskStatus {
+        PASS, FAIL, PENDING
+    }
+
 
 }
