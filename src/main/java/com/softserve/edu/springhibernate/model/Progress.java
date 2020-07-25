@@ -38,7 +38,7 @@ public class Progress {
     @Temporal(TemporalType.DATE)
     private Date updated;
 
-    @OneToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "trainee_id")
     private User user;
 
