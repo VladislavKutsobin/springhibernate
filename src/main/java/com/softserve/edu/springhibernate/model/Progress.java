@@ -7,6 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.Date;
+import java.util.HashMap;
 
 @Getter
 @Setter
@@ -44,5 +45,6 @@ public class Progress {
     @OneToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "task_id")
     private Task task;
+
 
 }

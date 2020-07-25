@@ -45,4 +45,5 @@ public class Sprint {
 
     @OneToMany(mappedBy = "sprint", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Task> tasks;
+
 }
